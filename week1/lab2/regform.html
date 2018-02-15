@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Registration Form</title>
+
+    <link rel="stylesheet" type="text/css" href="lab2/styles/style.css">
+    <link rel="stylesheet" href="css.styles.css?v=1.0">
+
+    <script>
+    function testResults(form){
+      // simple script to pop-up form values after submission
+      // grab form element values and store as variables
+      var username = form.username.value;
+      // repeat above for all the form elements used
+
+      // complete alert message popup by appending variables
+      alert ("You registered: " + username + ", ");
+    }
+    </script>
+  </head>
+
+  <body>
+
+    <h1>Moggybook!</h1>
+
+    <form>
+      <table> border="0" cellspacing="5" cellpadding="5">
+        <tr>
+          <td>Username:</td>
+          <td>
+            <input type="textarea" name="username">
+          </td>
+        </tr>
+        <tr>
+          <td> *** element label *** </td>
+          <td> *** element input *** </td>
+        </tr>
+      </table>
+      <input type="submit" name="submit" value="submit" onClick="testResults(this.form)" />
+    </form>
+  </body>
+  </html>
