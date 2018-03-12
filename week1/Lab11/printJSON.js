@@ -4,12 +4,12 @@ $(function(){
 
   $('#searchform').submit(function(){
     //get current value and add to items list
-    var searchterms  $('#searchterms').val();
+    var searchterms = $('#searchterms').val();
     //call out youtube function
     getResultsFromOMDB(searchterms);
     return false;
   });
-)};
+});
 
 function getResultsFromOMDB(searchterms){
   //call youtube API using AJAX
