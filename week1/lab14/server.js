@@ -16,10 +16,7 @@ var client = new Twitter({
   access_token_secret: '8uuq6fg4obS0A1HNcCEtvuaAQUye1FqonMG9qExU505UR'
 });
 
-
 app.use(express.static('public'))
-
-
 
 app.get('/tweetsjson', function(req, res) {
   var params = {
@@ -38,6 +35,5 @@ app.get('/tweetsjson', function(req, res) {
     }
   });
 });
-
 
 app.listen(8080);
