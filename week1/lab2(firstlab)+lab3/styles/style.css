@@ -11,3 +11,8 @@ header, section, article, nav, aside, footer, div, {
 }
 
 .warning{font-weight: bold;}
+
+.flex-container{
+  display: -webkit-flex;
+  display: flex;
+}
