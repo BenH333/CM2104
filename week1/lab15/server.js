@@ -31,6 +31,7 @@ app.get('/all', function(req, res) {
   });
 });
 
+//Adding Route
 app.post('/quotes', function (req, res) {
     db.collection('quotes').save(req.body, function(err, result) {
       if (err) throw err;
@@ -39,6 +40,7 @@ app.post('/quotes', function (req, res) {
   });
 });
 
+//Filtering Route
 app.post('/search', function(req, res) {
   db.collection('quotes').find(req.body).toArray(function(err, result) {
     if (err) throw err;
@@ -52,5 +54,24 @@ app.post('/search', function(req, res) {
       output +="</div>"
     }
     res.send(output);
+  });
+});
+
+//Delete Route
+app.post('/delete', function(req, res) {
+    db.collection('quotes').deleteOne(req.body, function(err, result) {
+      if (err) throw err;
+      res.redirect('/');
+  });
+});
+
+//Update Route
+app.post('/update', function(req, res) {
+  var query = { quote: req.body.quote };
+  var newvalues = { $set: {name: req.body.newname, quote: req.body.newquote } };
+
+  db.collection('quotes').updateOne(query,newvalues, function(err, result) {
+    if (err) throw err;
+    res.redirect('/');
   });
 });
