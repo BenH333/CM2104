@@ -1,10 +1,3 @@
-/**
- * @Author: John Isaacs <john>
- * @Date:   11-Mar-182018
- * @Filename: server.js
- * @Last modified by:   john
- * @Last modified time: 12-Mar-182018
- */
 var express = require('express');
 var app = express();
 var Twitter = require('twitter');
